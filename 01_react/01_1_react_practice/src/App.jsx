@@ -24,16 +24,33 @@ function App() {
     setStateStr('stateStr 변경 문자열');
   }
 
+  let [homeStr, setHomeStr] = useState('초기 homeStr');
+  function updateHomeStr(){
+    setHomeStr('업데이트 homeStr');
+  }
+
   let [stateArr, setStateArr] = useState([0,1,2,3,4,5]);
   function stateArrUpdate(){
     let newStateArr = [...stateArr, 6, 7, 8, 9];
     setStateArr(newStateArr);
   }
 
+  let [homeArr, setHomeArr] = useState([10, 20, 30, 40, 50]);
+  function updateHomeArr(){
+    let newArr = [...homeArr, 60, 70, 80, 90];
+    setHomeArr(newArr);
+  }
+
   let [stateObj, setStateObj] = useState({name:'재의 귀인', game:'다크소울3', weapon:'롱소드'});
   function stateObjUpdate(){
     let newStateObj = {...stateObj, name:'빛 바랜 자', game:'엘든링', weapon:'클레이모어'};
     setStateObj(newStateObj);
+  }
+
+  let [homeObj, setHomeObj] = useState({name:'크레이토스', game:'갓 오브 워', weapon:'혼돈의 블레이드'});
+  function updateHomeObj(){
+    let newObj = {...homeObj, name:'세키로', game:'세키로', weapon:'쿠사비마루'};
+    setHomeObj(newObj); 
   }
 
 
@@ -48,16 +65,28 @@ function App() {
       {stateStr}<br/>
       <button onClick={stateStrUpdate}>stateStr 문자열 업데이트</button><br/><br/>
 
+      {homeStr}<br/>
+      <button onClick={updateHomeStr}>homeStr 문자열 업데이트</button><br/><br/>
+
       {stateArr}<br/>
       <button onClick={stateArrUpdate}>stateArr 배열 업데이트</button><br/><br/>
+
+      {homeArr}<br/>
+      <button onClick={updateHomeArr}>homeArr 배열 업데이트</button><br/><br/>
 
       <ul>
         <li>{stateObj.name}</li>
         <li>{stateObj.game}</li>
         <li>{stateObj.weapon}</li>
       </ul>
-      <button onClick={stateObjUpdate}>stateObj 객체 업데이트</button>
+      <button onClick={stateObjUpdate}>stateObj 객체 업데이트</button><br/><br/>
 
+      <ul>
+        <li>{homeObj.name}</li>
+        <li>{homeObj.game}</li>
+        <li>{homeObj.weapon}</li>
+      </ul>
+      <button onClick={updateHomeObj}>homeObj 객체 업데이트</button>
     </div>
        
   )
