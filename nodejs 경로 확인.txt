@@ -6,3 +6,5 @@ vscode - 터미널 - npm create vite 01_react --template react - react 선택 - 
 이후 cd 01_react (경로 이동) - npm install(패키지 설치) - npm run dev(개발서버 실행)	// ctrl+c - 서버 닫기
 
 참고 : 구버전은 npx create-react-app 명칭 (CRA 방식)이었으나, 현재는 변경됨(25년 2월까지 유효) - 기존 방식이 너무 무거웠기 때문
+
+npm create vite 02_01_state
