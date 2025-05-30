@@ -47,12 +47,73 @@ function App() {
     setStateObj(newStateObj);
   }
 
+  // 버튼 클릭 등의 이벤트 핸들러 내부에서 바로 setStateObj를 호출
+  const handleClick = () => {
+    setStateObj(prevState => ({
+      ...prevState, // 이전 상태를 복사
+      name: '빛 바랜 자',
+      game: '엘든링',
+      weapon: '클레이모어'
+    }));
+  };
+
+  /*
+  # 화살표 함수
+  // 기본 문법
+  (param1, param2) => { statements }
+
+  // 파라미터가 하나일 때 괄호 생략 가능
+  param => { statements }
+
+  // 파라미터가 없을 때 빈 괄호 사용
+  () => { statements }
+
+  // 본문이 하나의 표현식(expression)일 때 중괄호와 return 생략 가능
+  (param1, param2) => expression
+  // 위는 { return expression; } 와 동일합니다.
+
+
+  // 일반적인 함수 선언
+  function add(a, b) {
+    return a + b;
+  }
+  console.log(add(2, 3)); // 5
+
+  // 익명 함수 (함수 표현식)
+  const subtract = function(a, b) {
+    return a - b;
+  };
+  console.log(subtract(5, 2)); // 3
+
+
+  // 기본 형태 (파라미터 여러 개, 중괄호, return)
+  const add = (a, b) => {
+    return a + b;
+  };
+  console.log(add(2, 3)); // 5
+
+  // 본문이 단일 표현식일 때 (가장 간결한 형태)
+  const addConcise = (a, b) => a + b;
+  console.log(addConcise(2, 3)); // 5
+
+  // 파라미터가 하나일 때 괄호 생략
+  const double = num => num * 2;
+  console.log(double(7)); // 14
+
+  // 파라미터가 없을 때
+  const greet = () => "Hello, World!";
+  console.log(greet()); // "Hello, World!"
+
+  // 객체를 반환할 때 주의: 중괄호와 헷갈리지 않도록 괄호로 감싸야 함
+  const createUser = (name, age) => ({ name: name, age: age });
+  console.log(createUser("Alice", 30)); // { name: 'Alice', age: 30 }
+  */
+  
   let [homeObj, setHomeObj] = useState({name:'크레이토스', game:'갓 오브 워', weapon:'혼돈의 블레이드'});
   function updateHomeObj(){
     let newObj = {...homeObj, name:'세키로', game:'세키로', weapon:'쿠사비마루'};
     setHomeObj(newObj); 
   }
-
 
   return (
     <div>
@@ -80,6 +141,7 @@ function App() {
         <li>{stateObj.weapon}</li>
       </ul>
       <button onClick={stateObjUpdate}>stateObj 객체 업데이트</button><br/><br/>
+      <button onClick={handleClick}>stateObj 객체 업데이트</button><br/><br/>
 
       <ul>
         <li>{homeObj.name}</li>
