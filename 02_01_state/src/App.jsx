@@ -154,17 +154,17 @@ function App() {
             setUserList([...userList]);
           }
 
-          //filter를 이용한 회원 삭제 : 조건을 만족하는 요소만 추출 - 배열의 길이가 달라질 수 있음
+          //filter를 이용한 회원 삭제 : 조건을 만족하는 요소만 추출해 새로운 배열 생성성 - 배열의 길이가 달라질 수 있음
           function delUserFilter(){
             let newUserList = userList.filter(function(filterUser, filterIndex){
-              return user != filterUser;
+              return user != filterUser;  //기존 list 배열의 객체인 user 와 filter된 유저가 같지 않을 경우(즉 아래에서 선택되지 않은 객체)만 추출해 새로운 배열로 만듦 
             });
 
             setUserList(newUserList);
           }
 
-          
-          return <tr key={'user'+index}>
+          //key={} 는 .map()에서 사용될 고유한 key 값을 만들기 위해서 
+          return <tr key={'user'+index}>  
                   <td>{user.name}</td>
                   <td>{user.age}</td>
                   <td>{user.addr}</td>
