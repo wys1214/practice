@@ -1,0 +1,36 @@
+.wrap {
+    width: 1200px;
+    margin : 0 auto;
+}
+.wrap>* {
+    width: 800px;
+    margin:30px auto;
+    text-align: center;
+}
+.member-wrap {
+  border-spacing: 0;
+}
+.member-wrap th {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.regist-wrap {
+    border : 1px solid #ccc;
+}
+.member-wrap td {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 20px;
+}
+.input-wrap {
+  padding: 10px 0px;
+}
+.input-wrap > label {
+  display: inline-block;
+  width: 80px;
+}
+.input-wrap > input {
+  width: 150px;
+}

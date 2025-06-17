@@ -1,0 +1,45 @@
+.header {
+    background: #c2e59c;
+    background : -webkit-linear-gradient(
+        to right,
+        #64b3f4,
+        #c2e59c
+    );
+    background: linear-gradient(
+        to right,
+        #64b3f4,
+        #c2e59c
+    );
+    padding : 20px;
+}
+
+.header>div {
+    width: 1200px;
+    margin : 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+}
+
+.site-logo > a {
+    font-size: 35px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.link-box {
+    display: flex;
+    align-items: center;
+    gap : 30px;
+}
+
+.link-box > a {
+    color : #fff;
+}
+
+.link-box > a:hover {
+    text-decoration: underline;
+}
