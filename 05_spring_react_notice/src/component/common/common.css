@@ -1,0 +1,46 @@
+.header {
+    background-color: #64b3f4;
+    padding : 20px;
+}
+
+.header>div{
+    width: 1200px;
+    margin : 0 auto;
+    display: flex;
+    gap : 50px;
+}
+
+.logo>a{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.header a {
+    color : #fff;
+    text-decoration: none;
+}
+
+.nav {
+    display: flex;
+    list-style-type: none;
+    gap : 20px;
+    align-items: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #ccc;
+    padding: 20px;
+}
+
+.footer>div{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.write-wrap>a{
+    color : black;
+}
