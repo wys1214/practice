@@ -60,7 +60,7 @@ function HeaderLink () {
     const setLoginMember = props.setLoginMember;
     */
 
-    //스토리지에 저장한 데이터 추출
+    //스토리지에 저장한 로그인 데이터 추출
     const {isLogined, loginMember, setIsLogined, setLoginMember} = useUserStore();
 
     //로그아웃 Link 클릭 시 동작함수
