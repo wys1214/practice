@@ -61,7 +61,7 @@ function HeaderLink () {
     */
 
     //스토리지에 저장한 데이터 추출
-    const {isLogined, loginMember, setIsLogined, setLoginMember} = useUserStore();
+    const {isLogined, setIsLogined, loginMember, setLoginMember, setAccessToken, setRefreshToken} = useUserStore();
 
     const navigate = useNavigate();
 
@@ -87,7 +87,7 @@ function HeaderLink () {
                         <Link to="/member">{loginMember.memberId}</Link>
                     </li>
                     <li>
-                        <Link to="/" onClick={logout}>로그아웃</Link>
+                        <Link to="#" onClick={logout}>로그아웃</Link>
                     </li>  
                 </>
                 :

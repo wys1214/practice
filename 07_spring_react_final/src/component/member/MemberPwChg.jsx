@@ -95,11 +95,6 @@ export default function MemberPwChg(){
         axiosInstance(options)
         .then(function(res){
             if(res.data.resData){   //정상 변경시
-                Swal.fire({
-                    title : '알림',
-                    text : res.data.clientMsg,
-                    icon : res.data.alertIcon
-                });
 
                 //스토리지에 저장된 loginMember 로그인 정보 초기화
                 setIsLogined(false);
