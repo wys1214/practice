@@ -4,7 +4,7 @@ import Footer from './component/common/Footer'
 import Main from './component/common/Main'
 import Join from './component/member/Join'
 import Login from './component/member/Login'
-import Test from './component/member/Test'
+import MemberMain from './component/member/MemberMain'
 
 import { Route, Routes } from 'react-router-dom'
 
@@ -45,7 +45,7 @@ function App() {
             <Route path='/join' element={<Join />}/>
             {/*<Route path='/login' element={<Login setIsLogin={setIsLogin} setLoginMember={setLoginMember}/>}/>*/}
             <Route path='/login' element={<Login/>}/>
-            <Route path='/test' element={<Test />}/>
+            <Route path='/member/*' element={<MemberMain/>}/> {/* /member 로 시작하는 라우터 클릭 시 모두 MemberMain 컴포넌트로 전환 */}
           </Routes>
         </main>
         <Footer/>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./member.css";
 import Swal from "sweetalert2";
 import axios from 'axios';
@@ -16,9 +16,13 @@ export default function Login() {
     */
 
     //스토리지에 저장한 데이터 추출
-    const {setIsLogined, setLoginMember, setAccessToken, setRefreshToken} = useUserStore();
+    const {isLogined, setIsLogined, setLoginMember, setAccessToken, setRefreshToken} = useUserStore();
 
-    const [test, setTest] = useState('');
+    useEffect(function(){
+        if(!isLogined){ //외부에서 강제 로그아웃된 경우
+            setLoginMember(null);   //이 경우에만 loginMember 를 null 처리
+        }
+    },[]);
 
     //.env에 저장된 환경변수 값 가져오기
     const serverUrl = import.meta.env.VITE_BACK_SERVER; // http://localhost:9999
@@ -63,7 +67,7 @@ export default function Login() {
                 console.log(res);
                 //res.data == ResponseDto
                 //res.data.resData == LoginMember (Member 객체와 토큰을 포함하고 있는 객체)
-                //res.data.resData.member == Member 객체
+                //res.data.resData.member == Member
                 //res.data.resData.accessToken  == 요청시마다 헤더에 포함시킬 토큰
                 //res.data.resData.refreshToken == accessToken 만료 시 재발급 요청에 필요한 토큰
                 if(res.data.resData == null){   //로그인 실패했을 경우
@@ -78,8 +82,6 @@ export default function Login() {
                     //부모 컴포넌트에서 전달받은 setState 함수를 사용해 state 값 변경 : App component 에서 렌더링이 다시 일어남
                     setIsLogin(true);
                     setLoginMember(res.data.resData);
-
-                    zustand 를 활용해 토큰으로 로그인 정보를 관리할 것이기 때문에 주석 처리
                     */
 
                     //스토리지 데이터 변경 : 로그인 여부, 로그인 정보, 토큰

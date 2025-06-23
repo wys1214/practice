@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useUserStore from "../../store/useUserStore";
 
 //화면 상단 헤더
@@ -60,8 +60,10 @@ function HeaderLink () {
     const setLoginMember = props.setLoginMember;
     */
 
-    //스토리지에 저장한 로그인 데이터 추출
+    //스토리지에 저장한 데이터 추출
     const {isLogined, loginMember, setIsLogined, setLoginMember} = useUserStore();
+
+    const navigate = useNavigate();
 
     //로그아웃 Link 클릭 시 동작함수
     function logout(){
@@ -70,9 +72,10 @@ function HeaderLink () {
         setLoginMember({});
         */
         setIsLogined(false);
-        setLoginMember(null);
         setAccessToken(null);
         setRefreshToken(null);
+
+        navigate("/login");
     }
     
     return (
@@ -81,7 +84,7 @@ function HeaderLink () {
                 isLogined ? 
                 <>
                     <li>
-                        <Link to="/test">{loginMember.memberId}</Link>
+                        <Link to="/member">{loginMember.memberId}</Link>
                     </li>
                     <li>
                         <Link to="/" onClick={logout}>로그아웃</Link>

@@ -23,7 +23,7 @@ export default function Join() {
     });
 
     //아이디, 비밀번호, 이름, 전화번호 onChange 호출 함수
-    //onChange 핸들러가 상태를 업데이트하더라도, input 필드가 항상 상태를 반영하도록 하고 React 제어 컴포넌트의 모든 기능을 활용하려면 input 필드에 항상 value={member.memberId} (또는 해당 상태 속성)를 포함해야 함
+    //onChange 핸들러가 상태를 업데이트하더라도, input 필드가 항상 상태를 반영하도록 하고 React 제어 컴포넌트의 모든 기능을 활용하려면 input 필드에 항상 value={member.memberId} (또는 해당 상태 속성)를 포함해야 합니다.
     function chgMember(e){
         member[e.target.id] = e.target.value;
         setMember({...member});

@@ -8,3 +8,6 @@ npm install sweetalert2 --force     : 알림창 (17버전까지 유효, 해당 1
 
 2025-06-20 왕윤식
 npm install zustand                 : 로그인 정보와 같은 애플리케이션 전역에 영향을 주는 상태를 관리하기 위한 zustand 라이브러리 설치
+
+2025-06-23 왕윤식
+npm install history --force         : 컴포넌트 외부(인터셉터)에서 컴포넌트 전환을 위해 설치
